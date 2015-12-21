@@ -2,6 +2,7 @@
 
 adapting our "trial" app to Ionic as a proof of concept
 
+https://blinkmobile-ionic-trial.surge.sh/
 
 ## Using this project
 
