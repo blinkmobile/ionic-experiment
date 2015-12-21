@@ -26,6 +26,6 @@
   "cordovaPlatforms": [],
   "scripts": {
     "deploy": "surge --project ./www/ ",
-    "start": "ionic serve --consolelogs --serverlogs --nobrowser"
+    "start": "ionic serve --serverlogs --nobrowser"
   }
 }
