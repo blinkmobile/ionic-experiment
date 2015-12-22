@@ -28,6 +28,7 @@ angular.module('app')
 
     $stateProvider.state('inspections-map', {
       controller: 'InspectionsMapCtrl',
+      controllerAs: 'ctrl',
       url: '/inspections/map',
       templateUrl: 'components/inspections-map/tpl.html'
     });

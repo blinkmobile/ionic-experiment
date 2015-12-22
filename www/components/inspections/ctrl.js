@@ -10,6 +10,4 @@ function InspectionsCtrl ($scope, InspectionsSvc) {
     .then(function () {
       me.inspections = InspectionsSvc.inspections;
     });
-
-  console.log(this.inspections);
 }

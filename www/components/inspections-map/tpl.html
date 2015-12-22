@@ -1,5 +1,15 @@
 <ion-view view-title="Inspections Map" hide-back-button="false">
   <ion-content>
-    <h1>Please Select A Site</h1>
+    <div class="card bm-instructions">
+      <div class="item item-test-wrap">
+        <p>
+          <button class="button button-positive" ui-sref="inspections-closest">Find Closest Job</button>
+        </p>
+        <p>Or, tap an icon for more detail</p>
+        <p>Note: maps require a good network connection</p>
+      </div>
+    </div>
+
+    <leaflet markers="ctrl.markers" center="ctrl.center" tiles="ctrl.tiles" width="100%" height="70vh"></leaflet>
   </ion-content>
 </ion-view>
