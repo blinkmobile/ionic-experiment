@@ -14,6 +14,9 @@ var webpack = require('webpack');
 module.exports = {
   context: path.join(__dirname, 'www'),
   entry: ['./js/app.js'],
+  externals: {
+    'angular': 'var angular'
+  },
   output: {
     path: path.join(__dirname, 'www'),
     filename: 'bundle.js'
