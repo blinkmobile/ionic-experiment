@@ -1,8 +1,23 @@
 .bm-inspectionitem {}
 
+.bm-inspectionitem__bm-name,
+.bm-inspectionitem__bm-summary {
+  margin-bottom: 5px;
+}
+
 .bm-inspectionitem__bm-name {}
+
+.bm-inspectionitem__bm-summary {
+  display: inline-block;
+}
 
 .bm-inspectionitem__bm-summary > dt,
 .bm-inspectionitem__bm-summary > dd {
   display: inline-block;
+}
+
+@media (max-width: 30em) {
+  .bm-inspectionitem__bm-summary {
+    display: block;
+  }
 }
