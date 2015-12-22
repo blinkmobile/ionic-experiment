@@ -9,6 +9,7 @@ angular.module('app')
 
     $stateProvider.state('inspections', {
       controller: 'InspectionsCtrl',
+      controllerAs: 'ctrl',
       url: '/inspections',
       templateUrl: 'components/inspections/tpl.html'
     });
