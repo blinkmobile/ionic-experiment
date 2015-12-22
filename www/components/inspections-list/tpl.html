@@ -8,7 +8,7 @@
   </div>
 
   <div class="item" ng-repeat="inspection in (inspectionsList.inspections | inspection_status:inspectionsList.status | inspection_search:inspectionsList.search) track by inspection.business">
-    <inspection-item inspection="inspection" />
+    <inspection-item inspection="inspection" ui-sref="inspection.detail({ inspection: inspection.business })" />
   </div>
 
 </div>

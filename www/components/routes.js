@@ -10,7 +10,7 @@ angular.module('app')
     $stateProvider.state('inspections', {
       controller: 'InspectionsCtrl',
       controllerAs: 'ctrl',
-      url: '/inspections',
+      url: '^/inspections',
       templateUrl: 'components/inspections/tpl.html'
     });
 
@@ -20,9 +20,16 @@ angular.module('app')
       templateUrl: 'components/inspection-closest/tpl.html'
     });
 
-    $stateProvider.state('inspections-detail', {
+    $stateProvider.state('inspection', {
+      abstract: true,
+      url: '/inspection',
+      template: '<ui-view />'
+    });
+
+    $stateProvider.state('inspection.detail', {
       controller: 'InspectionCtrl',
-      url: '/inspections/:inspection',
+      controllerAs: 'ctrl',
+      url: '/:inspection',
       templateUrl: 'components/inspection/tpl.html'
     });
 

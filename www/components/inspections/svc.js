@@ -11,7 +11,7 @@ function InspectionsSvc ($http) {
         "address": "125 Donnison St",
         "business": "Jimmy's Cafe",
         "colour": "CC0000",
-        "date": "21 Nov 2014", 
+        "date": "21 Nov 2014",
         "form": "sitehistory",
         "latlong": "-33.427164,151.342995",
         "postcode": "2250",
@@ -21,6 +21,22 @@ function InspectionsSvc ($http) {
         "suburb": "Gosford",
         "totals": "2"
     }],
+
+    findInspection: function (query) {
+      var matches = this.inspections.filter(function (inspection) {
+        var key, value;
+        for (key in query) {
+          if (query.hasOwnProperty(key)) {
+            value = query[key];
+            if (inspection[key] !== value) {
+              return false;
+            }
+          }
+        }
+        return true;
+      });
+      return matches[0];
+    },
 
     retrieveInspections: function () {
       var me = this;
