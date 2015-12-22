@@ -1,0 +1,20 @@
+.bm-inspectionslist {}
+
+.bm-inspectionslist__bm-listdivider {}
+
+.bm-inspectionslist__bm-listdivider-Normal {
+  color: #fff;
+  background-color: #6c3;
+}
+.bm-inspectionslist__bm-listdivider-Overdue {
+  color: #fff;
+  background-color: #c00;
+}
+.bm-inspectionslist__bm-listdivider-Urgent {
+  color: #fff;
+  background-color: #f93;
+}
+
+.bm-inspectionslist__bm-counter {
+  float: right;
+}

@@ -1,22 +1,3 @@
-.bm-listdivider {}
-
-.bm-listdivider-normal {
-  color: #fff;
-  background-color: #6c3;
-}
-.bm-listdivider-overdue {
-  color: #fff;
-  background-color: #c00;
-}
-.bm-listdivider-urgent {
-  color: #fff;
-  background-color: #f93;
-}
-
-.bm-listdivider__bm-counter {
-  float: right;
-}
-
 .bm-instructions {
   text-align: center;
 }

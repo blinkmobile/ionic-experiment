@@ -1,0 +1,14 @@
+<div ng-if="(inspectionsList.inspections | inspection_status:inspectionsList.status | inspection_search:inspectionsList.search).length">
+
+  <div class="item item-divider bm-inspectionslist__bm-listdivider bm-inspectionslist__bm-listdivider-{{inspectionsList.status}}">
+    Overdue
+    <span class="bm-inspectionslist__bm-counter">
+      {{(inspectionsList.inspections | inspection_status:inspectionsList.status | inspection_search:inspectionsList.search).length}}
+    </span>
+  </div>
+
+  <div class="item" ng-repeat="inspection in (inspectionsList.inspections | inspection_status:inspectionsList.status | inspection_search:inspectionsList.search) track by inspection.business">
+    <inspection-item inspection="inspection" />
+  </div>
+
+</div>

@@ -12,44 +12,17 @@
 
     <div class="list list-inset">
 
-      <!-- <div class="item item-input-inset">
+      <div class="item item-input-inset">
         <label class="item-input-wrapper">
-          <input type="search" placeholder="search" title="search" />
+          <input type="search" placeholder="search" title="search" ng-model="ctrl.search"/>
         </label>
-      </div> -->
-
-      <div class="item item-divider bm-listdivider bm-listdivider-overdue">
-        Overdue
-        <span class="bm-listdivider__bm-counter">
-          {{(ctrl.inspections | inspection_status:'Overdue').length}}
-        </span>
       </div>
 
-      <div class="item" ng-repeat="inspection in ctrl.inspections | inspection_status:'Overdue' track by inspection.business">
-        <inspection-item inspection="inspection" />
-      </div>
+      <inspections-list inspections="ctrl.inspections" search="ctrl.search" status="'Overdue'"></inspections-list>
 
-      <div class="item item-divider bm-listdivider bm-listdivider-urgent">
-        Urgent
-        <span class="bm-listdivider__bm-counter">
-          {{(ctrl.inspections | inspection_status:'Urgent').length}}
-        </span>
-      </div>
+      <inspections-list inspections="ctrl.inspections" search="ctrl.search" status="'Urgent'"></inspections-list>
 
-      <div class="item" ng-repeat="inspection in ctrl.inspections | inspection_status:'Urgent' track by inspection.business">
-        <inspection-item inspection="inspection" />
-      </div>
-
-      <div class="item item-divider bm-listdivider bm-listdivider-normal">
-        Normal
-        <span class="bm-listdivider__bm-counter">
-          {{(ctrl.inspections | inspection_status:'Normal').length}}
-        </span>
-      </div>
-
-      <div class="item" ng-repeat="inspection in ctrl.inspections | inspection_status:'Normal' track by inspection.business">
-        <inspection-item inspection="inspection" />
-      </div>
+      <inspections-list inspections="ctrl.inspections" search="ctrl.search" status="'Normal'"></inspections-list>
 
     </div>
   </ion-content>
