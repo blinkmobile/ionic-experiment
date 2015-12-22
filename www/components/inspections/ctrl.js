@@ -1,7 +1,4 @@
-angular.module('app')
-  .controller('InspectionsCtrl', InspectionsCtrl);
-
-function InspectionsCtrl ($scope, InspectionsSvc) {
+module.exports = /* @ngInject */ function InspectionsCtrl ($scope, InspectionsSvc) {
   var me = this;
   this.inspections = InspectionsSvc.inspections;
   this.search = '';
@@ -10,4 +7,4 @@ function InspectionsCtrl ($scope, InspectionsSvc) {
     .then(function () {
       me.inspections = InspectionsSvc.inspections;
     });
-}
+};

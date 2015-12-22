@@ -1,7 +1,4 @@
-angular.module('app')
-  .controller('InspectionsMapCtrl', InspectionsMapCtrl);
-
-function InspectionsMapCtrl (InspectionsSvc) {
+module.exports = /* @ngInject */ function InspectionsMapCtrl (InspectionsSvc) {
   this.markers = InspectionsSvc.inspections.map(function (inspection) {
     var latlong = inspection.latlong.split(',');
     return {

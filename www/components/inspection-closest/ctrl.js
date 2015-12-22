@@ -1,4 +1,1 @@
-angular.module('app')
-  .controller('InspectionClosestCtrl', InspectionCtrl);
-
-function InspectionClosestCtrl () {}
+module.exports = /* @ngInject */ function InspectionClosestCtrl () {}
