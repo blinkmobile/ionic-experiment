@@ -13,6 +13,7 @@ var webpack = require('webpack');
 
 module.exports = {
   context: path.join(__dirname, 'www'),
+  devtool: 'source-map',
   entry: ['./js/app.js'],
   externals: {
     'angular': 'var angular'
