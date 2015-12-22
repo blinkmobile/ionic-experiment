@@ -1,0 +1,26 @@
+'use strict';
+
+// Node.js built-ins
+
+var path = require('path');
+
+// foreign modules
+
+var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+var webpack = require('webpack');
+
+// this module
+
+module.exports = {
+  context: path.join(__dirname, 'www'),
+  entry: ['./js/app.js'],
+  output: {
+    path: path.join(__dirname, 'www'),
+    filename: 'bundle.js'
+  },
+  plugins: [
+    new ngAnnotatePlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({})
+  ]
+};
