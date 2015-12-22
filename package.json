@@ -23,7 +23,10 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": [],
+  "cordovaPlatforms": [
+    "android",
+    "ios"
+  ],
   "scripts": {
     "deploy": "surge --project ./www/ ",
     "start": "ionic serve --serverlogs --nobrowser"
