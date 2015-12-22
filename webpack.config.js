@@ -17,6 +17,11 @@ module.exports = {
   externals: {
     'angular': 'var angular'
   },
+  module: {
+    loaders: [
+      { test: /\.html?$/, loader: 'html-loader' }
+    ]
+  },
   output: {
     path: path.join(__dirname, 'www'),
     filename: 'bundle.js'

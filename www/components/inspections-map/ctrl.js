@@ -1,3 +1,5 @@
+require('../inspections/svc');
+
 module.exports = /* @ngInject */ function InspectionsMapCtrl (InspectionsSvc) {
   this.markers = InspectionsSvc.inspections.map(function (inspection) {
     var latlong = inspection.latlong.split(',');
@@ -29,3 +31,5 @@ module.exports = /* @ngInject */ function InspectionsMapCtrl (InspectionsSvc) {
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
   };
 }
+
+module.exports.tpl = require('./tpl.html');

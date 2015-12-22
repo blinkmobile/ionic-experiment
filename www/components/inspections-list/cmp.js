@@ -1,9 +1,13 @@
-angular.module('app')
-  .component('inspectionsList', {
-    bindings: {
-      inspections: '=',
-      search: '=',
-      status: '='
-    },
-    templateUrl: 'components/inspections-list/tpl.html'
-  });
+var app = require('../app');
+
+require('../inspection-item/cmp');
+require('../inspections/fltr');
+
+app.component('inspectionsList', {
+  bindings: {
+    inspections: '=',
+    search: '=',
+    status: '='
+  },
+  template: require('./tpl.html')
+});

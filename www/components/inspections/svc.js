@@ -1,7 +1,6 @@
-angular.module('app')
-  .service('InspectionsSvc', InspectionsSvc);
+var app = require('../app');
 
-function InspectionsSvc ($http) {
+app.service('InspectionsSvc', /* @ngInject */ function InspectionsSvc ($http) {
   var URL = 'https://blinkm.co/_api/interaction/run/trial/getjobs/?action=list&key=798d6ae09c69cd3955338eb8511a12550853149c&userid=1';
 
   return {
@@ -47,4 +46,4 @@ function InspectionsSvc ($http) {
         });
     }
   };
-}
+});

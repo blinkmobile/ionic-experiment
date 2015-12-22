@@ -1,7 +1,8 @@
-angular.module('app')
-  .component('inspectionItem', {
-    bindings: {
-      inspection: '='
-    },
-    templateUrl: 'components/inspection-item/tpl.html'
-  });
+var app = require('../app');
+
+app.component('inspectionItem', {
+  bindings: {
+    inspection: '='
+  },
+  template: require('./tpl.html')
+});
