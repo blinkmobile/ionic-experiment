@@ -1,0 +1,106 @@
+<ion-view view-title="Perform Inspection" hide-back-button="false" class="{{ctrl.styles.view}}">
+  <ion-content>
+    <h1 class="{{ctrl.styles.heading}}">{{ctrl.inspection.business}}</h1>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <dl>
+          <dt>Inspector</dt>
+          <dd>Sam Stephens</dd>
+          <dt>Date</dt>
+          <dd>{{ctrl.date.toLocaleDateString()}}</dd>
+          <dt>Inspection Start Time</dt>
+          <dd>{{ctrl.date.toLocaleTimeString()}}</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <p>[insert geolocation button here]</p>
+      </div>
+    </div>
+
+    <h1 class="{{ctrl.styles.heading}}">Inspection Areas</h1>
+
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Food Storage</span>
+        <ion-list>
+          <ion-radio name="foodStorage" ng-model="ctrl.form.foodStorage" ng-value="'pass'">Pass</ion-radio>
+          <ion-radio name="foodStorage" ng-model="ctrl.form.foodStorage" ng-value="'na'">N/A</ion-radio>
+          <ion-radio name="foodStorage" ng-model="ctrl.form.foodStorage" ng-value="'fail'">Fail</ion-radio>
+        </ion-list>
+      </label>
+
+      <fail-input ng-if="ctrl.form.foodStorage == 'fail'" value="ctrl.form.foodStorageFail"></fail-input>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Food Preparation Area</span>
+        <ion-list>
+          <ion-radio name="foodPreparationArea" ng-model="ctrl.form.foodPreparationArea" ng-value="'pass'">Pass</ion-radio>
+          <ion-radio name="foodPreparationArea" ng-model="ctrl.form.foodPreparationArea" ng-value="'na'">N/A</ion-radio>
+          <ion-radio name="foodPreparationArea" ng-model="ctrl.form.foodPreparationArea" ng-value="'fail'">Fail</ion-radio>
+        </ion-list>
+      </label>
+
+      <fail-input ng-if="ctrl.form.foodPreparationArea == 'fail'" value="ctrl.form.foodPreparationAreaFail"></fail-input>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Food Service Area</span>
+        <ion-list>
+          <ion-radio name="foodServiceArea" ng-model="ctrl.form.foodServiceArea" ng-value="'pass'">Pass</ion-radio>
+          <ion-radio name="foodServiceArea" ng-model="ctrl.form.foodServiceArea" ng-value="'na'">N/A</ion-radio>
+          <ion-radio name="foodServiceArea" ng-model="ctrl.form.foodServiceArea" ng-value="'fail'">Fail</ion-radio>
+        </ion-list>
+      </label>
+
+      <fail-input ng-if="ctrl.form.foodServiceArea == 'fail'" value="ctrl.form.foodServiceAreaFail"></fail-input>
+    </div>
+
+    <h1 class="{{ctrl.styles.heading}}">Inspection Summary</h1>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <p>[insert completion time field here]</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <p>[insert completion date field here]</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <p>[insert rating field here]</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <p>[insert notes textarea here]</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <p>[insert sign-off date field here]</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <p>[insert signature capture field here]</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <p>[insert form controls here]</p>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

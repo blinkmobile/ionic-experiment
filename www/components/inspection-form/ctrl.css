@@ -1,0 +1,13 @@
+.view {
+  text-align: center;
+}
+
+.heading {
+  font-size: large;
+  text-align: center;
+}
+
+/* beat Ionic's specificity */
+h1.heading {
+  margin: 1em auto;
+}

@@ -1,6 +1,7 @@
 var app = require('./app');
 
 // if services/directives are not loaded here, then it's too late
+require('./fail-input/cmp');
 require('./inspection-item/cmp');
 require('./inspections/svc');
 require('./inspections-list/cmp');
@@ -33,6 +34,13 @@ app.config(/* ngInject */ function ($stateProvider, $urlRouterProvider) {
     controllerAs: 'ctrl',
     url: '/inspections/:inspection',
     template: require('./inspection-detail/ctrl').tpl
+  });
+
+  $stateProvider.state('inspectionForm', {
+    controller: require('./inspection-form/ctrl'),
+    controllerAs: 'ctrl',
+    url: '/inspections/:inspection/inspect',
+    template: require('./inspection-form/ctrl').tpl
   });
 
   $stateProvider.state('inspections-map', {

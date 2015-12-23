@@ -1,0 +1,8 @@
+<label class="item item-input item-select">
+  <span class="input-label">Reason for failure</span>
+  <select ng-model="failInput.select" ng-options="r for r in failInput.reasons"></select>
+</label>
+
+<label ng-if="failInput.select == 'Other'" class="item item-input item-stacked-label">
+  <input type="text" placeholder="Other reason" ng-model="failInput.other" />
+</label>
