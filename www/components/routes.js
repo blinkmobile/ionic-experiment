@@ -28,17 +28,11 @@ app.config(/* ngInject */ function ($stateProvider, $urlRouterProvider) {
     template: require('./inspection-closest/ctrl').tpl
   });
 
-  $stateProvider.state('inspection', {
-    abstract: true,
-    url: '/inspection',
-    template: '<ui-view />'
-  });
-
-  $stateProvider.state('inspection.detail', {
-    controller: require('./inspection/ctrl'),
+  $stateProvider.state('inspectionDetail', {
+    controller: require('./inspection-detail/ctrl'),
     controllerAs: 'ctrl',
-    url: '/:inspection',
-    template: require('./inspection/ctrl').tpl
+    url: '/inspections/:inspection',
+    template: require('./inspection-detail/ctrl').tpl
   });
 
   $stateProvider.state('inspections-map', {
