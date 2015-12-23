@@ -21,7 +21,8 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.css$/, loader: 'style-loader!css-loader?modules&localIdentName=[local]-[hash:base64:8]' },
-      { test: /\.html?$/, loader: 'html-loader' }
+      { test: /\.html?$/, loader: 'html-loader' },
+      { test: /\.jsx?$/, loader: 'babel-loader' }
     ]
   },
   output: {
