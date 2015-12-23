@@ -1,5 +1,6 @@
 require('../inspections/svc');
 require('../fail-input/cmp');
+require('../geolocation/cmp');
 
 module.exports = class InspectionFormCtrl {
   /* @ngInject */

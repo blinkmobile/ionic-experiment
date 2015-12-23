@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="item item-text-wrap">
+    <div class="button-bar">
+      <button class="button button-positive" ng-click="geolocation.update()">Capture location</button>
+      <button class="button" ng-click="geolocation.clear()">Clear</button>
+    </div>
+    <leaflet ng-if="geolocation.geolocation" markers="geolocation.markers" center="geolocation.center" tiles="geolocation.tiles" width="100%" height="30em"></leaflet>
+  </div>
+</div>

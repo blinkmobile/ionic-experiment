@@ -2,6 +2,7 @@ var app = require('./app');
 
 // if services/directives are not loaded here, then it's too late
 require('./fail-input/cmp');
+require('./geolocation/cmp');
 require('./inspection-item/cmp');
 require('./inspections/svc');
 require('./inspections-list/cmp');
