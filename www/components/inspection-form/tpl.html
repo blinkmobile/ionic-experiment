@@ -60,35 +60,30 @@
 
     <h1 class="{{ctrl.styles.heading}}">Inspection Summary</h1>
 
-    <div class="card">
-      <div class="item item-text-wrap">
-        <p>[insert completion time field here]</p>
-      </div>
-    </div>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Completion Time</span>
+      <input type="time" ng-model="ctrl.form.completionTime" />
+    </label>
 
-    <div class="card">
-      <div class="item item-text-wrap">
-        <p>[insert completion date field here]</p>
-      </div>
-    </div>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Completion Date</span>
+      <input type="date" ng-model="ctrl.form.completionDate" />
+    </label>
 
-    <div class="card">
-      <div class="item item-text-wrap">
-        <p>[insert rating field here]</p>
-      </div>
-    </div>
+    <label class="item item-stacked-label range range-positive">
+      <span class="input-label">Rating</span>
+      <input type="range" min="0" max="5" ng-model="ctrl.form.rating" />
+    </label>
 
-    <div class="card">
-      <div class="item item-text-wrap">
-        <p>[insert notes textarea here]</p>
-      </div>
-    </div>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Notes</span>
+      <textarea ng-model="ctrl.form.notes"></textarea>
+    </label>
 
-    <div class="card">
-      <div class="item item-text-wrap">
-        <p>[insert sign-off date field here]</p>
-      </div>
-    </div>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Sign-Off Date</span>
+      <input type="date" ng-model="ctrl.form.signoffDate" />
+    </label>
 
     <div class="card">
       <div class="item item-text-wrap">
@@ -96,10 +91,10 @@
       </div>
     </div>
 
-    <div class="card">
-      <div class="item item-text-wrap">
-        <p>[insert form controls here]</p>
-      </div>
+    <div class="button-bar">
+      <button class="button button-positive" ng-click="ctrl.save()">save</button>
+      <button class="button" ng-click="ctrl.discard()">discard</button>
+      <button class="button button-balanced" ng-click="ctrl.submit()">submit</button>
     </div>
 
   </ion-content>

@@ -12,7 +12,9 @@ app.component('failInput', {
   bindings: {
     value: '='
   },
-  controller: function () {
+  controller: /* @ngInject */ function ($scope) {
+    var me = this;
+
     this.styles = require('./cmp.css');
     this.reasons = REASONS;
     if (this.reasons.indexOf(this.value) === -1) {
@@ -22,6 +24,12 @@ app.component('failInput', {
       this.select = this.value;
       this.other = '';
     }
+
+    $scope.$watch(function () {
+      return (me.select == "Other" && me.other) || me.select;
+    }, function (value) {
+      me.value = value;
+    });
   },
   template: require('./tpl.html')
 });
