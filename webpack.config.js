@@ -20,6 +20,7 @@ module.exports = {
   },
   module: {
     loaders: [
+      { test: /\.css$/, loader: 'style-loader!css-loader?modules&localIdentName=[local]-[hash:base64:8]' },
       { test: /\.html?$/, loader: 'html-loader' }
     ]
   },
@@ -30,6 +31,10 @@ module.exports = {
   plugins: [
     new ngAnnotatePlugin(),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({})
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
   ]
 };

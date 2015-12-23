@@ -1,20 +1,20 @@
-.bm-inspectionslist {}
+.component {}
 
-.bm-inspectionslist__bm-listdivider {}
+.divider {}
 
-.bm-inspectionslist__bm-listdivider-Normal {
+.divider.Normal {
   color: #fff;
   background-color: #6c3;
 }
-.bm-inspectionslist__bm-listdivider-Overdue {
+.divider.Overdue {
   color: #fff;
   background-color: #c00;
 }
-.bm-inspectionslist__bm-listdivider-Urgent {
+.divider.Urgent {
   color: #fff;
   background-color: #f93;
 }
 
-.bm-inspectionslist__bm-counter {
+.counter {
   float: right;
 }

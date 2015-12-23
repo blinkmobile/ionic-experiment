@@ -9,5 +9,8 @@ app.component('inspectionsList', {
     search: '=',
     status: '='
   },
+  controller: function () {
+    this.styles = require('./cmp.css');
+  },
   template: require('./tpl.html')
 });

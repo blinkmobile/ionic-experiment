@@ -1,9 +1,9 @@
-.bm-home__bm-heading {
+.heading {
   font-size: large;
   text-align: center;
 }
 
 /* beat Ionic's specificity */
-h1.bm-home__bm-heading {
+h1.heading {
   margin: 1em auto;
 }

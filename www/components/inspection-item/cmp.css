@@ -1,23 +1,21 @@
-.bm-inspectionitem {}
+.component {}
 
-.bm-inspectionitem__bm-name,
-.bm-inspectionitem__bm-summary {
+.name, .summary {
   margin-bottom: 5px;
 }
 
-.bm-inspectionitem__bm-name {}
-
-.bm-inspectionitem__bm-summary {
+.summary {
   display: inline-block;
 }
 
-.bm-inspectionitem__bm-summary > dt,
-.bm-inspectionitem__bm-summary > dd {
+.summary > dt,
+.summary > dd {
   display: inline-block;
+  margin-right: .5em;
 }
 
 @media (max-width: 30em) {
-  .bm-inspectionitem__bm-summary {
+  .summary {
     display: block;
   }
 }

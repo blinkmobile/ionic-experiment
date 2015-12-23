@@ -9,8 +9,10 @@ app.config(/* ngInject */ function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider.state('home', {
+    controller: require('./home/ctrl'),
+    controllerAs: 'ctrl',
     url: '/',
-    template: require('./home/tpl.html')
+    template: require('./home/ctrl').tpl
   });
 
   $stateProvider.state('inspections', {
