@@ -11,7 +11,8 @@ gulp.task('watch', function () {
   gulp.watch([
     'www/**/*',
     '!www/lib/**/*',
-    '!www/bundle.js'
+    '!www/bundle.js',
+    '!www/bundle.js.map'
   ], [
     'webpack'
   ]);
