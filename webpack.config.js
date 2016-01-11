@@ -22,7 +22,7 @@ module.exports = {
     loaders: [
       { test: /\.css$/, loader: 'style-loader!css-loader?modules&localIdentName=[local]-[hash:base64:8]' },
       { test: /\.html?$/, loader: 'html-loader' },
-      { test: /\.jsx?$/, loader: 'babel-loader' }
+      { exclude: /localforage/, test: /\.jsx?$/, loader: 'babel-loader' }
     ]
   },
   output: {
