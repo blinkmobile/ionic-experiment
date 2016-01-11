@@ -40,7 +40,7 @@ app.config(/* ngInject */ function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('inspectionForm', {
     controller: require('./inspection-form/ctrl'),
     controllerAs: 'ctrl',
-    url: '/inspections/:inspection/inspect',
+    url: '/inspections/:inspection/inspect?uuid',
     template: require('./inspection-form/ctrl').tpl
   });
 

@@ -1,4 +1,5 @@
 var angular = require('angular');
+var localforage = require('localforage/dist/localforage.nopromises');
 var param = require('jquery-param');
 var uuid = require('uuid');
 
@@ -10,6 +11,12 @@ app.service('InspectionsSvc', /* @ngInject */ function InspectionsSvc ($http) {
   var POST = 'http://blinkm.co/_R_/common/3/xhr/SaveFormRecord.php?schema=3&_asid=20442&_fn=report&_action=add';
 
   return {
+    drafts: localforage.createInstance({
+      driver: [ localforage.INDEXEDDB, localforage.WEBSQL ],
+      name: 'Inspections',
+      storeName: 'drafts'
+    }),
+
     // inspections: [],
 
     inspections: [{

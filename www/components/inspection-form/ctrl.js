@@ -1,3 +1,5 @@
+var uuid = require('uuid');
+
 require('../inspections/svc');
 require('../fail-input/cmp');
 require('../geolocation/cmp');
@@ -11,13 +13,24 @@ module.exports = class InspectionFormCtrl {
 
     this.date = new Date();
     this.styles = require('./ctrl.css');
-    this.inspection = InspectionsSvc.findInspection({ business: $stateParams.inspection });
+    this.inspection = InspectionsSvc.findInspection({
+      business: $stateParams.inspection
+    });
+
     this.form = {
+      _uuid: $stateParams.uuid || uuid.v1(),
       foodPreparationArea: null,
       foodServiceArea: null,
       foodStorage: null,
       rating: 0
     };
+
+    if (!$stateParams.uuid) {
+      $state.go('inspectionForm', { uuid: this.form._uuid }, {
+        location: 'replace',
+        notify: false
+      });
+    }
   }
 
   discard () {
@@ -26,6 +39,7 @@ module.exports = class InspectionFormCtrl {
 
   save () {
     console.log('InspectionFormCtrl#save()', this);
+    this.InspectionsSvc.drafts.setItem(this.form._uuid, this.form);
   }
 
   submit () {
