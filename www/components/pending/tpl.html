@@ -1,5 +1,18 @@
-<ion-view view-title="Pending" hide-back-button="false">
+<ion-view view-title="Pending" hide-back-button="false" cache-view="false">
   <ion-content>
-    <h1>Pending Jobs</h1>
+    <!-- <h1 class="{{ctrl.styles.heading}}">Pending Jobs</h1> -->
+    <h1 class="{{ctrl.styles.heading}}">Draft Jobs</h1>
+
+    <div class="list" ng-if="ctrl.drafts.length">
+
+      <div class="item" ng-repeat="draft in ctrl.drafts track by draft._uuid" ui-sref="inspectionForm({ business: draft.business, uuid: draft._uuid })">
+        <pending-item pending="draft" />
+      </div>
+
+    </div>
+
+    <p ng-if="!ctrl.drafts.length">
+      There are no saved drafts.
+    </p>
   </ion-content>
 </ion-view>

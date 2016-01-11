@@ -6,6 +6,7 @@ require('./geolocation/cmp');
 require('./inspection-item/cmp');
 require('./inspections/svc');
 require('./inspections-list/cmp');
+require('./pending-item/cmp');
 
 app.config(/* ngInject */ function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
@@ -33,14 +34,14 @@ app.config(/* ngInject */ function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('inspectionDetail', {
     controller: require('./inspection-detail/ctrl'),
     controllerAs: 'ctrl',
-    url: '/inspections/:inspection',
+    url: '/inspections/:business',
     template: require('./inspection-detail/ctrl').tpl
   });
 
   $stateProvider.state('inspectionForm', {
     controller: require('./inspection-form/ctrl'),
     controllerAs: 'ctrl',
-    url: '/inspections/:inspection/inspect?uuid',
+    url: '/inspections/:business/inspect?uuid',
     template: require('./inspection-form/ctrl').tpl
   });
 
@@ -52,7 +53,9 @@ app.config(/* ngInject */ function ($stateProvider, $urlRouterProvider) {
   });
 
   $stateProvider.state('pending', {
+    controller: require('./pending/ctrl'),
+    controllerAs: 'ctrl',
     url: '/pending',
-    template: require('./pending/tpl.html')
+    template: require('./pending/ctrl').tpl
   });
 });

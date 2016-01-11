@@ -1,3 +1,4 @@
+var angular = require('angular');
 var uuid = require('uuid');
 
 require('../inspections/svc');
@@ -14,7 +15,7 @@ module.exports = class InspectionFormCtrl {
     this.date = new Date();
     this.styles = require('./ctrl.css');
     this.inspection = InspectionsSvc.findInspection({
-      business: $stateParams.inspection
+      business: $stateParams.business
     });
 
     this.form = {
@@ -39,7 +40,11 @@ module.exports = class InspectionFormCtrl {
 
   save () {
     console.log('InspectionFormCtrl#save()', this);
-    this.InspectionsSvc.drafts.setItem(this.form._uuid, this.form);
+    var data = angular.extend({
+      date: this.date.toISOString(),
+      business: this.inspection.business
+    }, this.form);
+    this.InspectionsSvc.drafts.setItem(this.form._uuid, data);
   }
 
   submit () {
