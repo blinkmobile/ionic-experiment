@@ -7,7 +7,7 @@ require('../geolocation/cmp');
 
 module.exports = class InspectionFormCtrl {
   /* @ngInject */
-  constructor ($ionicLoading, $state, $stateParams, InspectionsSvc) {
+  constructor ($ionicLoading, $scope, $state, $stateParams, InspectionsSvc) {
     this.$ionicLoading = $ionicLoading;
     this.$state = $state;
     this.InspectionsSvc = InspectionsSvc;
@@ -20,10 +20,18 @@ module.exports = class InspectionFormCtrl {
 
     this.form = {
       _uuid: $stateParams.uuid || uuid.v1(),
+      completionDate: null,
+      completionTime: null,
       foodPreparationArea: null,
+      foodPreparationAreaFail: null,
       foodServiceArea: null,
+      foodServiceAreaFail: null,
       foodStorage: null,
-      rating: 0
+      foodStorageFail: null,
+      geolocation: null,
+      notes: null,
+      rating: 0,
+      signoffDate: null
     };
 
     if (!$stateParams.uuid) {
@@ -32,6 +40,17 @@ module.exports = class InspectionFormCtrl {
         notify: false
       });
     }
+
+    InspectionsSvc.drafts.getItem(this.form._uuid)
+      .then((draft) => {
+        if (draft) {
+          this.date = new Date(draft.date);
+          Object.keys(this.form).forEach((key) => {
+            this.form[key] = draft[key];
+          });
+          $scope.$digest();
+        }
+      });
   }
 
   discard () {
