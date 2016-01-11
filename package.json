@@ -4,7 +4,9 @@
   "description": "An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
-    "gulp-concat": "^2.2.0"
+    "gulp-concat": "^2.2.0",
+    "jquery-param": "0.2.0",
+    "uuid": "2.0.1"
   },
   "devDependencies": {
     "babel-core": "6.3.21",
