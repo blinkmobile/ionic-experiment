@@ -34,13 +34,6 @@ module.exports = class InspectionFormCtrl {
       signoffDate: null
     };
 
-    if (!$stateParams.uuid) {
-      $state.go('inspectionForm', { uuid: this.form._uuid }, {
-        location: 'replace',
-        notify: false
-      });
-    }
-
     InspectionsSvc.drafts.getItem(this.form._uuid)
       .then((draft) => {
         if (draft) {
