@@ -1,7 +1,7 @@
 <div ng-if="(inspectionsList.inspections | inspection_status:inspectionsList.status | inspection_search:inspectionsList.search).length" class="{{inspectionsList.styles.component}}">
 
   <div class="item item-divider {{inspectionsList.styles.divider}} {{inspectionsList.styles[inspectionsList.status]}}">
-    Overdue
+    {{inspectionsList.status}}
     <span class="{{inspectionsList.styles.counter}}">
       {{(inspectionsList.inspections | inspection_status:inspectionsList.status | inspection_search:inspectionsList.search).length}}
     </span>
